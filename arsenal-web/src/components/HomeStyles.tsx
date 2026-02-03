@@ -3,24 +3,8 @@ export default function HomeStyles() {
     <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sarabun:wght@300;400;500;600&display=swap');
 
-        /* ─── GLOBAL RESET - ENSURE SCROLL WORKS ─── */
-        html, body {
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          height: auto !important;
-          overflow-x: hidden;
-          overflow-y: scroll !important;
-          scroll-behavior: smooth;
-        }
-
-        body {
-          background: #000;
-          min-height: 100vh;
-        }
-
         /* ─── KEYFRAMES ─── */
-        @keyframes fadeInUp {
+        @keyframes home-fadeInUp {
           from { opacity:0; transform:translateY(28px); }
           to   { opacity:1; transform:translateY(0); }
         }
@@ -304,7 +288,7 @@ export default function HomeStyles() {
           line-height: 1;
           margin-bottom: 8px;
           color: #fff;
-          animation: fadeInUp .9s cubic-bezier(.4,0,.2,1) .4s both;
+          animation: home-fadeInUp .9s cubic-bezier(.4,0,.2,1) .4s both;
           text-shadow: 0 8px 48px rgba(0,0,0,.7);
         }
         
@@ -313,7 +297,7 @@ export default function HomeStyles() {
           height: 2px;
           background: linear-gradient(90deg,transparent,#d4af37,transparent);
           margin: 0 auto 28px;
-          animation: fadeInUp .6s ease .75s both;
+          animation: home-fadeInUp .6s ease .75s both;
         }
         
         .hero-tagline {
@@ -322,7 +306,7 @@ export default function HomeStyles() {
           letter-spacing: .28em;
           color: #d4af37;
           margin-bottom: 20px;
-          animation: fadeInUp .9s cubic-bezier(.4,0,.2,1) .55s both;
+          animation: home-fadeInUp .9s cubic-bezier(.4,0,.2,1) .55s both;
         }
         
         .hero-subtitle {
@@ -333,7 +317,7 @@ export default function HomeStyles() {
           max-width: 600px;
           line-height: 1.6;
           letter-spacing: .02em;
-          animation: fadeInUp .9s cubic-bezier(.4,0,.2,1) .7s both;
+          animation: home-fadeInUp .9s cubic-bezier(.4,0,.2,1) .7s both;
         }
 
         .hero-bottom {
@@ -353,7 +337,7 @@ export default function HomeStyles() {
           gap: 10px;
           cursor: pointer;
           opacity: 0;
-          animation: fadeInUp .8s ease 1.2s forwards;
+          animation: home-fadeInUp .8s ease 1.2s forwards;
           transition: opacity .3s;
         }
         

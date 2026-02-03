@@ -7,7 +7,23 @@ const nextConfig: NextConfig = {
   // Image optimization
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [],
+    remotePatterns: [
+      // API-Football player photos
+      {
+        protocol: "https",
+        hostname: "media.api-sports.io",
+        pathname: "/football/**",
+      },
+
+      // เผื่อบาง endpoint คืนรูป CDN อื่น (กันไว้)
+      {
+        protocol: "https",
+        hostname: "cdn.api-sports.io",
+        pathname: "/**",
+      },
+    ],
+    // dev: มักอยากให้ next/image ทำงานแบบไม่ optimize (เร็วขึ้น)
+    // prod: ให้ optimize ปกติ
     unoptimized: process.env.NODE_ENV === "development",
   },
 
@@ -16,22 +32,10 @@ const nextConfig: NextConfig = {
     {
       source: "/(.*)",
       headers: [
-        {
-          key: "X-Content-Type-Options",
-          value: "nosniff",
-        },
-        {
-          key: "X-Frame-Options",
-          value: "SAMEORIGIN",
-        },
-        {
-          key: "X-XSS-Protection",
-          value: "1; mode=block",
-        },
-        {
-          key: "Referrer-Policy",
-          value: "strict-origin-when-cross-origin",
-        },
+        { key: "X-Content-Type-Options", value: "nosniff" },
+        { key: "X-Frame-Options", value: "SAMEORIGIN" },
+        { key: "X-XSS-Protection", value: "1; mode=block" },
+        { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
       ],
     },
   ],

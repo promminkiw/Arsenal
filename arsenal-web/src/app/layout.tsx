@@ -1,20 +1,5 @@
-import type { Metadata } from 'next';
-
-// ✅ Global styles (Tailwind + base styles)
 import '@/styles/globals.css';
-
-// ✅ Export viewport separately (not in metadata)
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#000000',
-};
-
-// ✅ Export metadata separately
-export const metadata: Metadata = {
-  title: 'Arsenal FC - History Timeline',
-  description: 'Explore the legendary history of Arsenal Football Club from 1886 to present day',
-};
+import Navbar from '@/components/Navbar';
 
 export default function RootLayout({
   children,
@@ -22,8 +7,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th">
-      <body>{children}</body>
+    <html lang="en">
+      <body
+        // ✅ default theme (เหมือนเดิม: ดำ + ขาว)
+        style={
+          {
+            '--app-bg': '#0b0b0f',
+            '--app-fg': '#ffffff',
+          } as React.CSSProperties
+        }
+        // ✅ ใช้ tailwind arbitrary values
+        className="min-h-screen bg-[var(--app-bg)] text-[var(--app-fg)]"
+      >
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

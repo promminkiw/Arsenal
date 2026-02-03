@@ -1,0 +1,69 @@
+/* Squad Theme CSS - Optimized for Dark Mode Squad Page */
+
+.squad-theme {
+  /* Color Variables */
+  --app-bg: #0a0a12;
+  --app-fg: #ffffff;
+  
+  /* Accent Colors by Position */
+  --accent-gk: #00D9FF;
+  --accent-def: #C0FF00;
+  --accent-mid: #FFB800;
+  --accent-fwd: #FF006E;
+  
+  /* Apply Base Styles */
+  background: var(--app-bg);
+  color: var(--app-fg);
+  min-height: 100vh;
+  
+  /* Typography */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+  
+  /* Smooth Scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Text Selection */
+.squad-theme ::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.squad-theme ::-moz-selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Remove Tap Highlight on Mobile */
+.squad-theme a,
+.squad-theme button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus States */
+.squad-theme *:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Image Optimization */
+.squad-theme img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Performance - Will Change on Hover Only */
+.squad-theme * {
+  will-change: auto;
+}
+
+.squad-theme *:hover,
+.squad-theme *:focus {
+  will-change: transform;
+}
